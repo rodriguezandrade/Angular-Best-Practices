@@ -10,6 +10,7 @@ import { FeatureRoutingModule } from './app.routing.module';
 import { RouterModule } from '@angular/router';
 import { HeroesService } from '../services/heroes.service';
 import { HeroeComponent } from './heroe/heroe.component';
+import { SearchHeroeComponent } from './search-heroe/search-heroe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeroeComponent } from './heroe/heroe.component';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    SearchHeroeComponent
   ],
   imports: [
     BrowserModule,

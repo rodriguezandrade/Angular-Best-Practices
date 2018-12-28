@@ -1,5 +1,8 @@
 <h1>Buscando: <small>{{termino}}</small></h1>
 <hr>
+<div *ngIf="Heroe.length==0" class="alert alert-primary animated fadeIn fasted" role="alert">
+   No existe <a  class="alert-link">heroe:</a>{{termino}}
+  </div>
 <div class="card-columns animated fadeIn">
   <div class="card" *ngFor="let heroe of Heroe">
     <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombres">

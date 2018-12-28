@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HeroesService } from '../services/heroes.service';
 import { HeroeComponent } from './heroe/heroe.component';
 import { SearchHeroeComponent } from './search-heroe/search-heroe.component';
+import { HeroetarjetaComponent } from './heroetarjeta/heroetarjeta.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SearchHeroeComponent } from './search-heroe/search-heroe.component';
     AboutComponent,
     HeroesComponent,
     HeroeComponent,
+    HeroetarjetaComponent,
     SearchHeroeComponent
   ],
   imports: [

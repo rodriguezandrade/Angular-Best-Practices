@@ -1,5 +1,5 @@
 <h1><small>Marvel y Dc</small></h1>
 <hr>
 <div class="card-columns animated fadeIn">
-    <app-heroetarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroetarjeta>
+  <app-heroetarjeta (heroeSelecionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroetarjeta>
 </div>

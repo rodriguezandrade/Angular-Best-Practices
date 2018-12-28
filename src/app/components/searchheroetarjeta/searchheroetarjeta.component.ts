@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Heroe } from 'src/app/services/heroes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchheroetarjeta',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchheroetarjeta.component.css']
 })
 export class SearchheroetarjetaComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() heroe: Heroe[] = [];
+  @Input() index: number;
+  constructor(private _router: Router) { }
   ngOnInit() {
+  }
+  verHeroe() {
+    this._router.navigate(['/heroe', this.index]);
   }
 
 }

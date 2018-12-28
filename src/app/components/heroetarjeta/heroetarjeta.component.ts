@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-heroetarjeta',
@@ -9,12 +10,15 @@ import { Router } from '@angular/router';
 export class HeroetarjetaComponent implements OnInit {
   @Input() heroe: any = {};
   @Input() index: number;
-  constructor(private _router: Router) { }
+  @Output() heroeSelecionado: EventEmitter<number>;
+  constructor(private _router: Router) {
+    this.heroeSelecionado = new EventEmitter();
+  }
 
   ngOnInit() {
   }
   verHeroe() {
-    this._router.navigate(['/heroe', this.index]);
-    console.log(this.index);
+    this.heroeSelecionado.emit(this.index);
+    // this._router.navigate(['/heroe', this.index]);
   }
 }

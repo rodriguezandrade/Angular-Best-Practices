@@ -4,12 +4,5 @@
    No existe <a  class="alert-link">heroe:</a>{{termino}}
   </div>
 <div class="card-columns animated fadeIn">
-  <div class="card" *ngFor="let heroe of Heroe">
-    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombres">
-    <div class="card-body">
-      <h5 class="card-title">{{heroe.nombres}}</h5>
-      <p class="card-text">{{heroe.bio}}</p>
-      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
-    </div>
-  </div>
+    <app-searchheroetarjeta  *ngFor="let heroe of Heroe"></app-searchheroetarjeta>
 </div>

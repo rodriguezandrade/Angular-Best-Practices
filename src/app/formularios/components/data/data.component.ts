@@ -33,7 +33,7 @@ export class DataComponent implements OnInit {
       'password2': new FormControl()
     });
 
-    this.forma.controls['password1'].setValidators([
+    this.forma.controls['password2'].setValidators([
       Validators.required,
       this.noIgualContra.bind(this.forma)]);
     // this.forma.setValue(this.usuario);
@@ -79,7 +79,7 @@ export class DataComponent implements OnInit {
   }
 
 
-  noIgualContra(control: FormControl): any {
+  noIgualContra(control: FormControl): { [s: string]: boolean } {
     const forma: any = this;
     if (control.value !== forma.controls['password1'].value) {
       return {

@@ -8,6 +8,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroeComponent } from './heroe/heroe.component';
 import { SearchHeroeComponent } from './search-heroe/search-heroe.component';
 import { TemplateComponent } from '../formularios/components/template/template.component';
+import { DataComponent } from '../formularios/components/data/data.component';
 
 // Services
 
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'heroes', component: HeroesComponent },
     { path: 'about', component: AboutComponent },
     { path: 'formTemplate', component: TemplateComponent },
+    { path: 'formData', component: DataComponent },
 ];
 
 @NgModule({

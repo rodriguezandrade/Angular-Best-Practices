@@ -1,3 +1,86 @@
-<p>
-  data works!
-</p>
+<h4>Formularios <small>template</small></h4>
+<hr>
+<form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate">
+  <div formGroupName="nombreCompleto">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+
+        <input minlength="5" [ngClass]="{'is-invalid': !forma.get('nombreCompleto.nombre').valid}" class="form-control"
+          type="text" placeholder="Nombre" formControlName="nombre">
+        <div class="invalid-feedback" *ngIf="forma.get('nombreCompleto.nombre').errors?.required">
+          Nombre es requerido
+        </div>
+        <div class="invalid-feedback" *ngIf="forma.get('nombreCompleto.nombre').errors?.minlength">
+          Minimo 5 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido" [ngClass]="{'is-invalid': !forma.get('nombreCompleto.apellido').valid}">
+        <div class="invalid-feedback" *ngIf="forma.get('nombreCompleto.apellido').errors?.required">
+          Apellido es requerido
+        </div>
+        <div class="invalid-feedback" *ngIf="forma.get('nombreCompleto.apellido').errors?.minlength">
+          Minimo 5 caracteres
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-md-8">
+      <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo" [ngClass]="{'is-invalid': !forma.get('correo').valid}">
+      <div class="invalid-feedback" *ngIf="forma.get('correo').errors?.pattern">
+        Correo Invalido
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Password</label>
+    <div class="col-md-8">
+      <input class="form-control" type="password" placeholder="Password" formControlName="password1" [ngClass]="{'is-invalid': !forma.get('correo').valid}">
+      <!-- <div class="invalid-feedback">
+        Correo Invalido
+      </div> -->
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Repetir</label>
+    <div class="col-md-8">
+      <input class="form-control" type="password" placeholder="Password" formControlName="password2" [ngClass]="{'is-invalid': !forma.get('correo').valid}">
+      <!-- <div class="invalid-feedback">
+        Correo Invalido
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Formas de Mandar Arrays -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Pasatiempos</label>
+    <div class="col-md-8" formArrayName="pasatiempos">
+      <input *ngFor="let pasatiempo of forma.controls['pasatiempos'].controls; let i = index;" [formControlName]="i"
+        type="text" class="form-control">
+    </div>
+  </div>
+
+  <button (click)="agregarPasatiempo()" type="button" class="btn btn-primary">
+    Nuevo
+  </button>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>
+{{forma.valid}}

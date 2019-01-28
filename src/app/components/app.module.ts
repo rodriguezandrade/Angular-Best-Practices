@@ -16,6 +16,7 @@ import { HeroetarjetaComponent } from './heroetarjeta/heroetarjeta.component';
 import { SearchheroetarjetaComponent } from './searchheroetarjeta/searchheroetarjeta.component';
 import { TemplateComponent } from '../formularios/components/template/template.component';
 import { DataComponent } from '../formularios/components/data/data.component';
+import { MiscelaneosComponent } from '../miscelaneos/miscelaneos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DataComponent } from '../formularios/components/data/data.component';
     HeroetarjetaComponent,
     SearchHeroeComponent,
     TemplateComponent,
-    DataComponent
+    DataComponent,
+    MiscelaneosComponent
   ],
   imports: [
     BrowserModule,

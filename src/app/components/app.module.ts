@@ -17,10 +17,12 @@ import { SearchheroetarjetaComponent } from './searchheroetarjeta/searchheroetar
 import { TemplateComponent } from '../formularios/components/template/template.component';
 import { DataComponent } from '../formularios/components/data/data.component';
 import { MiscelaneosComponent } from '../miscelaneos/miscelaneos.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ResaltadoDirective} from '../directives/resaltado.directive';
 @NgModule({
   declarations: [
     AppComponent,
+    ResaltadoDirective,
     HeaderComponent,
     NavbarComponent,
     HomeComponent,
@@ -38,6 +40,7 @@ import { MiscelaneosComponent } from '../miscelaneos/miscelaneos.component';
     BrowserModule,
     RouterModule.forRoot([]),
     FeatureRoutingModule,
+    FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule
   ],

@@ -1,4 +1,41 @@
-<p>
+<p [style.fontSize.px]="tamano">
   miscelaneos works!
 </p>
-<i class="fa fa-star">i</i>
+<button (click)="tamano = tamano + 5">subir</button>
+<button (click)="tamano = tamano - 5">bajar</button>
+<hr>
+
+<h3 [ngClass]="{ 'text-danger':propiedades.danger, 'text-info': !propiedades.danger}">Hola Vos</h3>
+
+<button (click)="propiedades.danger= !propiedades.danger" type="button" name="button" class="btn " [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info':!propiedades.danger }">
+  Cambiar</button>
+
+<br>
+<h3 appResaltado>Proceso Asincrono</h3>
+<Button (click)="loading = !loading" class="btn" [ngClass]="{'btn-primary': loading, 'btn-success':!loading}" type="button"
+  name="button" [disabled]="loading">
+  <fa-icon *ngIf="loading" [icon]="faSpinner" [spin]="true"></fa-icon>
+  <fa-icon *ngIf="!loading" [icon]="faSave" [spin]="false"></fa-icon>
+  Guardar Cambios
+</Button>
+
+<hr>
+
+<p [appResaltado]="'orange'">Directiva Personalizada</p>
+
+<a>---Ng Switch--------</a>
+<button (click)="alert='success'">Assigne Alerta</button>
+<div [ngSwitch]="alert">
+  <div *ngSwitchCase="'secondary'" class="alert alert-secondary" role="alert">
+    This is a secondary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    This is a success alert—check it out!
+  </div>
+  <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">
+    This is a danger alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert alert-info" role="alert">
+    This is a info alert—check it out!
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-data',
@@ -7,7 +8,8 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
-
+  title = 'app';
+  faCoffee = faCoffee;
   usuario: Object = {
     nombreCompleto: {
       nombre: 'Jonathan Andrade',

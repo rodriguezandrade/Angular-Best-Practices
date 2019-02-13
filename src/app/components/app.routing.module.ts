@@ -10,10 +10,12 @@ import { SearchHeroeComponent } from './search-heroe/search-heroe.component';
 import { TemplateComponent } from '../formularios/components/template/template.component';
 import { DataComponent } from '../formularios/components/data/data.component';
 import { MiscelaneosComponent } from '../miscelaneos/miscelaneos.component';
+import { RutasHijasComponent } from '../miscelaneos/rutas-hijas/rutas-hijas.component';
+import { UsuarioComponent } from '../miscelaneos/rutas-hijas/usuario/usuario.component';
+import { USUARIO_ROUTES } from '../miscelaneos/rutas-hijas/usuario/usuario.routes';
 
 // Services
-
-const routes: Routes = [
+const APP_ROUTES: Routes = [
     { path: 'heroe/:id', component: HeroeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'search/:termino', component: SearchHeroeComponent },
@@ -22,10 +24,9 @@ const routes: Routes = [
     { path: 'formTemplate', component: TemplateComponent },
     { path: 'formData', component: DataComponent },
     { path: 'miscelaneos', component: MiscelaneosComponent },
+    { path: 'rutasHijas', component: RutasHijasComponent },
+    { path: 'usuario/:id', component: UsuarioComponent, children: USUARIO_ROUTES },
+    { path: '**', pathMatch: 'full', redirectTo: 'rutasHijas' },
 ];
 
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-})
-export class FeatureRoutingModule {}
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

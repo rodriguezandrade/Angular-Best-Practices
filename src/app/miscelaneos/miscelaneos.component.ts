@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component} from '@angular/core';
 import { faSpinner, faSave } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,7 +6,7 @@ import { faSpinner, faSave } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './miscelaneos.component.html',
   styleUrls: ['./miscelaneos.component.css']
 })
-export class MiscelaneosComponent implements OnInit {
+export class MiscelaneosComponent  {
   alert: string;
   tamano = 20;
   faSpinner = faSpinner;
@@ -18,9 +18,5 @@ export class MiscelaneosComponent implements OnInit {
   loading = false;
 
   constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }

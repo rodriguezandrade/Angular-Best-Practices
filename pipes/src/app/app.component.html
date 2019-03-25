@@ -1,0 +1,108 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row mt-5">
+  <div class="container">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Variable</th>
+          <th scope="col">Pipe</th>
+          <th scope="col">Producto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{nombre }}</td>
+          <td>uppercase</td>
+          <td>{{nombre | uppercase}}</td>
+        </tr>
+        <tr>
+          <td>{{nombre }}</td>
+          <td>slice: 3</td>
+          <td>{{nombre | slice:3}}</td>
+        </tr>
+
+        <tr>
+          <td>{{nombre }}</td>
+          <td>slice: 0:3</td>
+          <td>{{nombre | slice:0:3}}</td>
+        </tr>
+
+        <tr>
+          <td>{{arreglo }}</td>
+          <td>slice: 1:5</td>
+          <td>{{arreglo | slice:1:5}}</td>
+        </tr>
+
+        <tr>
+          <td>{{PI}}</td>
+          <td>Number:'3.2-2'</td>
+          <td>{{PI | number: '3.2-2'}}</td>
+        </tr>
+        <tr>
+          <td>{{a}}</td>
+          <td>Percent :'2.2-2'</td>
+          <td>{{a | percent: '2.2-2'}}</td>
+        </tr>
+        <tr>
+          <td>{{salario}}</td>
+          <td>salario</td>
+          <td>{{salario| currency:'EUR':true:'4.2-6'}}</td>
+        </tr>
+
+        <tr>
+          <td>{{fecha}}</td>
+          <td>Fecha</td>
+          <td>{{fecha | date}}</td>
+        </tr>
+        <tr>
+        <tr>
+          <td>{{fecha}}</td>
+          <td>Fecha: 'medium'</td>
+          <td>{{fecha | date:'medium'}}</td>
+        </tr>
+        <tr>
+          <td>{{nombre2}}</td>
+          <td>capitalizado: false</td>
+          <td>{{nombre2 | capitalizado:false}}</td>
+        </tr>
+        <tr>
+          <td>{{valorDePromesa}}</td>
+          <td>ASYNC</td>
+          <td>{{valorDePromesa| async}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><Button class="btn btn-primary" (click)="activar =!activar">
+              Activar / Desactivar
+              value:{{activar}}
+            </Button></td>
+          <td> {{nombre | contrasena:activar}}</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+            JSON
+          </pre>
+          </td>
+          <td>JSON</td>
+          <td>
+            <pre>
+            {{HEROE | json}}
+          </pre>
+          </td>
+        </tr>
+        <!-- <h4> Youtube Video</h4>
+        <iframe width="1216" height="684" [src]="video | domSeguro:'https://www.youtube.com/embed/'" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      </tbody>
+    </table>
+    <ul>
+      <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+    </ul>
+    <table>
+
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>
